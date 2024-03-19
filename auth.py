@@ -1,8 +1,8 @@
 # 主要是为PureAdmin做后端的JWT匹配
-# 但是要注意的是PureAdmin中使用的是当前时间，SimpleJWT使用的是UTC时间，建议修改PureAdmin
+# 但是要注意的是PureAdmin中使用的是当前时间，SimpleJWT使用的是UTC时间，建议初始化SecurityConfig时将use_utc设置为False
 
-from src.simple_jwt import SimpleJWT, SecurityConfig  # 简单JWT以及安全设置类
-from src.match_login import authenticate_user, User  # 登录匹配
+from src.fastapi_simple_jwt.simple_jwt import SimpleJWT, SecurityConfig  # 简单JWT以及安全设置类
+from src.fastapi_simple_jwt.match_login import authenticate_user, User  # 登录匹配
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials  # 从请求头中获取Token
 from fastapi import APIRouter  # 导出路由，报错
 from settings import JWTSettings  # 安全配置

@@ -136,7 +136,6 @@ class SimpleJWT(ABC):
         )
         return return_obj
 
-    # 组合Token结构，不需要Self，所以搭配@staticmethod使用
     def _generate_payload(
             self,
             subject: Dict[str, Any],
